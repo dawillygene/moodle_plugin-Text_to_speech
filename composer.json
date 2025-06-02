@@ -1,0 +1,7 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.342",
+        "smalot/pdfparser": "^2.11",
+        "landrok/language-detector": "^1.4"
+    }
+}

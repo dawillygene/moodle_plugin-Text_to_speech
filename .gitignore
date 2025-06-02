@@ -1,0 +1,44 @@
+# AWS Credentials - Never commit these
+aws_config.php
+aws_config.local.php
+.env
+
+# Composer dependencies
+vendor/
+composer.lock
+
+# Cache directories
+tts_cache/
+cache/
+
+# Log files
+*.log
+error.log
+debug.log
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
