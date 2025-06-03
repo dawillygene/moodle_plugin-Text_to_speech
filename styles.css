@@ -1,0 +1,64 @@
+.tts-controls {
+    margin: 10px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.tts-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.tts-btn {
+    background: #007cba;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tts-btn:hover {
+    background: #005a8b;
+}
+
+.tts-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.tts-voice-select,
+.tts-speed-select {
+    padding: 6px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background: white;
+}
+
+.tts-status {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.tts-audio-player {
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .tts-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .tts-voice-select,
+    .tts-speed-select {
+        width: 100%;
+    }
+}

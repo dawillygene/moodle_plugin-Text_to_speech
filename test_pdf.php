@@ -498,4 +498,48 @@ try {
 }
 
 echo "<p><strong>Next step:</strong> Install dependencies and integrate into your main Moodle plugin</p>";
+
+// Add plugin installation status and link
+echo "<hr>";
+echo "<h3>🔧 Moodle Plugin Integration</h3>";
+
+// Check if plugin is properly installed
+$plugin_installed = false;
+if (function_exists('get_config')) {
+    $plugin_version = get_config('local_texttospeech', 'version');
+    if ($plugin_version) {
+        $plugin_installed = true;
+        echo "<p style='color: green;'>✅ Plugin is installed (Version: " . $plugin_version . ")</p>";
+    }
+}
+
+if (!$plugin_installed) {
+    echo "<p style='color: orange;'>⚠️ Plugin not yet installed in Moodle</p>";
+}
+
+echo "<div style='background: #f0f8ff; padding: 15px; border-left: 4px solid #007cba; margin: 10px 0;'>";
+echo "<h4>🚀 To complete the Moodle integration:</h4>";
+echo "<ol>";
+echo "<li><strong>Install the plugin:</strong><br>";
+echo "Go to <a href='/moodle/admin/index.php' target='_blank'>Site Administration → Notifications</a> to install/upgrade the plugin</li>";
+echo "<li><strong>Configure AWS credentials:</strong><br>";
+echo "Go to <a href='/moodle/admin/settings.php?section=local_texttospeech' target='_blank'>Site Administration → Plugins → Local plugins → Text to Speech</a></li>";
+echo "<li><strong>Test on any PDF:</strong><br>";
+echo "Upload a PDF to any course and visit the file page - you should see the 'Read PDF Aloud' button</li>";
+echo "</ol>";
+echo "</div>";
+
+echo "<div style='background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;'>";
+echo "<h4>📁 Plugin Files Created:</h4>";
+echo "<ul>";
+echo "<li>✅ version.php - Plugin version information</li>";
+echo "<li>✅ settings.php - Admin configuration page</li>";
+echo "<li>✅ lib.php - Core integration hooks</li>";
+echo "<li>✅ classes/tts_manager.php - Main TTS functionality</li>";
+echo "<li>✅ ajax.php - AJAX request handler</li>";
+echo "<li>✅ js/tts_integration.js - Frontend JavaScript</li>";
+echo "<li>✅ styles.css - Plugin styles</li>";
+echo "<li>✅ lang/en/local_texttospeech.php - Language strings</li>";
+echo "</ul>";
+echo "</div>";
 ?>
